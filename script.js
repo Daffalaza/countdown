@@ -5,7 +5,7 @@ const second = document.getElementById('seconds');
 
 const countdown = "1 Jan 2024";
 
-function countdownApp() {
+var x = setInterval(function() {
     const countdownDate = new Date(countdown);
     const currentDate = new Date();
     const totalseconds = (countdownDate - currentDate) / 1000;
@@ -18,15 +18,8 @@ function countdownApp() {
     hours.innerHTML = (hour);
     mins.innerHTML = (min);
     second.innerHTML = (seconds);
-}
 
-function formatTime(time) {
-    return time < 10? '0${time}' : time;
-}
-
-countdownApp();
-
-setInterval(countdownApp, 1000);
-
-
-
+    if (seconds < 0) {
+        clearInterval(x);
+    }
+}, 1000);
