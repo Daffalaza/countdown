@@ -2,6 +2,7 @@ const days = document.getElementById('days');
 const hours = document.getElementById('hour');
 const mins = document.getElementById('mins');
 const second = document.getElementById('seconds');
+var text = document.getElementById('text');
 
 const countdown = "1 Jan 2024";
 
@@ -21,5 +22,11 @@ var x = setInterval(function() {
 
     if (seconds < 0) {
         clearInterval(x);
+
+        days.innerHTML = 0;
+        hours.innerHTML = 0;
+        mins.innerHTML = 0;
+        second.innerHTML = 0;
+        text.innerHTML = "Selamat tahun baru"
     }
 }, 1000);
